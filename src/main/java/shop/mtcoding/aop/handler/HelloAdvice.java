@@ -42,8 +42,6 @@ public class HelloAdvice {
                 System.out.println(username + "님 안녕하세요");
             }
         }
-
         return jp.proceed();
     }
-
 }
