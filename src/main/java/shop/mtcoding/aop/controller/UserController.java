@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 import shop.mtcoding.aop.handler.aop.LoginUser;
+import shop.mtcoding.aop.handler.aop.SessionUser;
 import shop.mtcoding.aop.model.User;
 
 @RequiredArgsConstructor
@@ -30,6 +31,12 @@ public class UserController {
 
     @GetMapping("/auth/1")
     public String authInfo(@LoginUser User user) { // 인증 필요함
+        System.out.println(user.getUsername());
+        return "인증 성공";
+    }
+
+    @GetMapping("/auth/ss/1")
+    public String authInfo2(@SessionUser User user) { // 인증 필요함
         System.out.println(user.getUsername());
         return "인증 성공";
     }
