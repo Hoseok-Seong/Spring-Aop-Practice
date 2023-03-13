@@ -23,13 +23,13 @@ public class UserController {
     }
 
     @GetMapping("/user/1")
-    public String userInfo() { // 인증 필요 없음
+    public String userInfo(User user) { // 인증 필요 없음
+        System.out.println(user.getUsername());
         return "인증 필요없는 접근";
     }
 
     @GetMapping("/auth/1")
     public String authInfo(@LoginUser User user) { // 인증 필요함
-        System.out.println("자동으로 값 주입됨");
         System.out.println(user.getUsername());
         return "인증 성공";
     }
